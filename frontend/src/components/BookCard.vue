@@ -48,8 +48,8 @@
 
 <script setup>
 import { computed } from 'vue'
-import StatusBadge from './StatusBadge.vue'
 import { useWatchlistStore } from '../stores/watchlist.js'
+import StatusBadge from './StatusBadge.vue'
 
 const props = defineProps({ book: Object })
 defineEmits(['select'])
@@ -61,6 +61,6 @@ const stars     = computed(() => parseInt(props.book.rating) || 0)
 const formattedPrice = computed(() => {
   const raw = (props.book.price || '0').replace(/[\xc2\xa3\u00a3Â£]/g, '').trim()
   const num = parseFloat(raw)
-  return isNaN(num) ? props.book.price : `\u00a3${num.toFixed(2)}`
+  return isNaN(num) ? props.book.price : `£${num.toFixed(2)}`
 })
 </script>

@@ -181,7 +181,7 @@ const stars        = computed(() => parseInt(props.book?.rating) || 0)
 const formattedPrice = computed(() => {
   const raw = (props.book?.price || '0').replace(/[\xc2\xa3\u00a3Â£]/g, '').trim()
   const num = parseFloat(raw)
-  return isNaN(num) ? props.book?.price : `\u00a3${num.toFixed(2)}`
+  return isNaN(num) ? props.book?.price : `£${num.toFixed(2)}`
 })
 
 watch(() => props.book, (b) => {

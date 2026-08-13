@@ -33,7 +33,7 @@
               style="background:#020617; border:1px solid #1e293b;"
             >
               <p class="text-green-400 font-semibold tabular-nums">
-                \u00a3{{ e.price.toFixed(2) }}
+                £{{ e.price.toFixed(2) }}
               </p>
               <p class="text-gray-500 mt-0.5">{{ e.date.slice(0, 10) }}</p>
             </div>
@@ -60,7 +60,7 @@
             >
               <td class="py-1.5 text-gray-400 tabular-nums">{{ e.date.slice(0, 10) }}</td>
               <td class="py-1.5 text-right text-green-400 font-mono tabular-nums">
-                \u00a3{{ e.price.toFixed(2) }}
+                £{{ e.price.toFixed(2) }}
               </td>
               <td class="py-1.5 text-right font-mono tabular-nums">
                 <span

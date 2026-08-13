@@ -8,13 +8,13 @@
           <div>
             <p class="label-sm">Target</p>
             <p class="text-blue-400 font-semibold text-sm tabular-nums mt-0.5">
-              \u00a3{{ item.target_price?.toFixed(2) }}
+              £{{ item.target_price?.toFixed(2) }}
             </p>
           </div>
           <div>
             <p class="label-sm">Last Price</p>
             <p class="text-green-400 font-semibold text-sm tabular-nums mt-0.5">
-              {{ item.last_price ? '\u00a3' + item.last_price.toFixed(2) : 'N/A' }}
+              {{ item.last_price ? '£' + item.last_price.toFixed(2) : 'N/A' }}
             </p>
           </div>
           <div>
@@ -92,7 +92,7 @@
 </template>
 
 <script setup>
-import { ref, computed } from 'vue'
+import { computed, ref } from 'vue'
 
 const props = defineProps({ item: Object })
 const emit  = defineEmits(['update', 'remove', 'history'])

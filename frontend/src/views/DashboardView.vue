@@ -80,8 +80,8 @@
 </template>
 
 <script setup>
-import { ref, computed, onMounted } from 'vue'
-import { getStats, runPipeline, getScrapeStatus } from '../api/index.js'
+import { computed, onMounted, ref } from 'vue'
+import { getScrapeStatus, getStats, runPipeline } from '../api/index.js'
 import { useToastStore } from '../stores/toast.js'
 
 const toast   = useToastStore()
@@ -90,7 +90,7 @@ const running = ref(false)
 
 const statCards = computed(() => [
   { label: 'Total Books',      value: stats.value.total_books ?? 0,           color: 'text-white'      },
-  { label: 'Average Price',    value: `\u00a3${stats.value.avg_price ?? '0.00'}`, color: 'text-green-400'  },
+  { label: 'Average Price',    value: `£${stats.value.avg_price ?? '0.00'}`, color: 'text-green-400'  },
   { label: 'Watchlist Items',  value: stats.value.watchlist_count ?? 0,       color: 'text-blue-400'   },
   { label: 'Price Records',    value: stats.value.tracked_books_history ?? 0, color: 'text-yellow-400' },
 ])
